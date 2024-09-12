@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "ngi"
+name = "ngi-calculations"
 version = "0.1.1"
 description = "CPT correlations including commonly used empirical correlations"
 authors = [
