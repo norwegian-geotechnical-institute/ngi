@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from ngi_cpt_correlations.models.geo import GeoParameter
+from ngi_calculations.cpt_correlations.models.geo import GeoParameter
 
 
 @dataclass

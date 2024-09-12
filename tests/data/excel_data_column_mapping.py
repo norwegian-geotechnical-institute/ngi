@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
 
-from ngi_cpt_correlations.definitions.geo import GEO
+from ngi_calculations.cpt_correlations.definitions.geo import GEO
 
 
 @dataclass(frozen=True)

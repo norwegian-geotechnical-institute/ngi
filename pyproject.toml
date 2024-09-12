@@ -8,7 +8,7 @@ authors = [
 ]
 readme = "README.md"
 packages = [
-    { include = "ngi_cpt_correlations", from = "src"},
+    { include = "ngi_calculations", from = "src"},
 ]
 
 [tool.poetry.dependencies]

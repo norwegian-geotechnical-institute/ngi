@@ -5,10 +5,10 @@ import pandas as pd
 import pytest
 from tests.data.calculation_data import Files2, get_data_from_excel_calculation_file
 
-from ngi_cpt_correlations.methods.cpt_process.calculations import CPTProcessCalculation
-from ngi_cpt_correlations.models.cpt_cone import CptCone
-from ngi_cpt_correlations.models.cpt_raw import RawCPT
-from ngi_cpt_correlations.models.lab_data import LabData
+from ngi_calculations.cpt_correlations.methods.cpt_process.calculations import CPTProcessCalculation
+from ngi_calculations.cpt_correlations.models.cpt_cone import CptCone
+from ngi_calculations.cpt_correlations.models.cpt_raw import RawCPT
+from ngi_calculations.cpt_correlations.models.lab_data import LabData
 
 
 def dict_parametrize(data, **kwargs) -> Callable:

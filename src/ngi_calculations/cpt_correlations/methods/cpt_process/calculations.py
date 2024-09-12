@@ -4,14 +4,14 @@ import numpy as np
 import pandas as pd
 from pandas.core.frame import DataFrame
 
-from ngi_cpt_correlations.config import MIN_CPT_ALLOWED_STEP
-from ngi_cpt_correlations.definitions.geo import GEO
-from ngi_cpt_correlations.definitions.physics import PhysicParameters as PHY
-from ngi_cpt_correlations.methods.cpt_process.options import CptProcessOptions
-from ngi_cpt_correlations.models.cpt_raw import RawCPT
-from ngi_cpt_correlations.models.lab_data import LabData
-from ngi_cpt_correlations.utils.interpolation import interpolate_missing_values
-from ngi_cpt_correlations.utils.perf_log import measure, track_execution
+from ngi_calculations.cpt_correlations.config import MIN_CPT_ALLOWED_STEP
+from ngi_calculations.cpt_correlations.definitions.geo import GEO
+from ngi_calculations.cpt_correlations.definitions.physics import PhysicParameters as PHY
+from ngi_calculations.cpt_correlations.methods.cpt_process.options import CptProcessOptions
+from ngi_calculations.cpt_correlations.models.cpt_raw import RawCPT
+from ngi_calculations.cpt_correlations.models.lab_data import LabData
+from ngi_calculations.cpt_correlations.utils.interpolation import interpolate_missing_values
+from ngi_calculations.cpt_correlations.utils.perf_log import measure, track_execution
 
 
 class CPTProcessCalculation:

@@ -1,7 +1,7 @@
 from pydantic import BaseModel, field_validator
 import pandas as pd
 
-from ngi_cpt_correlations.utils.models import CustomBaseModel
+from ngi_calculations.cpt_correlations.utils.models import CustomBaseModel
 
 
 class LabDataColumns(BaseModel):

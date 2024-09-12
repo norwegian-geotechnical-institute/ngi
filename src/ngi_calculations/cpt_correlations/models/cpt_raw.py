@@ -1,8 +1,8 @@
 import pandas as pd
 from pydantic import BaseModel, Field, field_validator
 
-from ngi_cpt_correlations.models.cpt_cone import CptCone
-from ngi_cpt_correlations.utils.models import CustomBaseModel
+from ngi_calculations.cpt_correlations.models.cpt_cone import CptCone
+from ngi_calculations.cpt_correlations.utils.models import CustomBaseModel
 
 
 class RawCPTColumns(BaseModel):

@@ -2,7 +2,7 @@ from contextlib import contextmanager
 from functools import wraps
 from time import time
 
-from ngi_cpt_correlations.utils.log import log
+from ngi_calculations.cpt_correlations.utils.log import log
 
 # A stack to keep track of the function names and log_child flag
 _execution_stack = []

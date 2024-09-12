@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from enum import Enum
 
 import pandas as pd
+
 from tests.data.excel_data_column_mapping import (
     CptProcessedColumns,
     CptRawColumns,

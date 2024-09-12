@@ -1,11 +1,11 @@
 import pytest
 from tests.data.faker_cpt import fake_cpt, fake_lab_profile_data
 
-from ngi_cpt_correlations.definitions.geo import GEO
-from ngi_cpt_correlations.definitions.physics import PhysicParameters as PHY
-from ngi_cpt_correlations.methods.cpt_process.calculations import CPTProcessCalculation
-from ngi_cpt_correlations.models.cpt_raw import RawCPT
-from ngi_cpt_correlations.models.lab_data import LabData
+from ngi_calculations.cpt_correlations.definitions.geo import GEO
+from ngi_calculations.cpt_correlations.definitions.physics import PhysicParameters as PHY
+from ngi_calculations.cpt_correlations.methods.cpt_process.calculations import CPTProcessCalculation
+from ngi_calculations.cpt_correlations.models.cpt_raw import RawCPT
+from ngi_calculations.cpt_correlations.models.lab_data import LabData
 
 
 @pytest.fixture

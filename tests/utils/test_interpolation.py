@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-from ngi_cpt_correlations.utils.interpolation import interpolate_missing_values
+from ngi_calculations.cpt_correlations.utils.interpolation import interpolate_missing_values
 
 df = pd.DataFrame(
     {

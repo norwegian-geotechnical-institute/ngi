@@ -4,7 +4,7 @@ import pandas as pd
 import pytest
 from pytest import dict_parametrize
 
-from ngi_cpt_correlations.utils.dataframes import find_n_closest_rows, merge_dataframe_on_column, safe_return
+from ngi_calculations.cpt_correlations.utils.dataframes import find_n_closest_rows, merge_dataframe_on_column, safe_return
 
 
 @dict_parametrize(
