@@ -2,8 +2,6 @@
 
 This repository contains various correlations for CPTs.
 
-It is notably used in NGI Digital applications COPIT and SIITE.
-
 # Getting Started
 
 ## Development 
@@ -24,7 +22,7 @@ then activate the virtual environment:
 poetry shell
 ```
 
-### Nixos
+### Nix
 
 If you use nix flakes, you can instead use:
 
