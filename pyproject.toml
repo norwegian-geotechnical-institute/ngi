@@ -18,6 +18,7 @@ param = "^2.1.0"
 scipy = "^1.13.1"
 numpy = "^2.0.0"
 pydantic = "^2.7.4"
+structlog = "^24.2.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.2.2"
@@ -25,7 +26,6 @@ pytest-watcher = "^0.4.2"
 ruff = "^0.4.10"
 mypy = "^1.10.0"
 pandas-stubs = "^2.2.2.240603"
-structlog = "^24.2.0"
 openpyxl = "^3.1.4"
 
 [tool.ruff]
