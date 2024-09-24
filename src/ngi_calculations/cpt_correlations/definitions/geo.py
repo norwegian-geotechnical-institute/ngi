@@ -230,7 +230,7 @@ class GeoParameters:
         label="normalized cone resistance",
         unit="MPa",
         symbol="qn",
-        equation="$q_{net} = 1000 * q_{t} - \sigma_v^{total}$",
+        equation=r"$q_{net} = 1000 * q_{t} - \sigma_v^{total}$",
         value_range=(0, None),
     )
 
@@ -320,7 +320,7 @@ class GeoParameters:
         label="Effective vertical stress",
         unit="kPa",
         symbol="sig_v eff",
-        equation="$\sigma_v^{eff} = \max( \sigma_v^{total} - u_0 ; 0 )$",
+        equation=r"$\sigma_v^{eff} = \max( \sigma_v^{total} - u_0 ; 0 )$",
         value_range=(0, None),
         legend_="σ v,eff",
     )
@@ -354,7 +354,7 @@ class GeoParameters:
         label="normalized cone resistance",
         unit="-",
         symbol="Qt",
-        equation="$Qt = ( 1000 * qt - \sigma_v^{total} ) / \sigma_v^{eff}$",
+        equation=r"$Qt = ( 1000 * qt - \sigma_v^{total} ) / \sigma_v^{eff}$",
         value_range=(0, None),
     )
 
@@ -364,7 +364,7 @@ class GeoParameters:
         # label="normalized pressure",
         unit="-",
         symbol="Bq",
-        equation="$Bq = ( u_2 - u_0 ) / ( 1000 * qt - \sigma_v^{total} )$",
+        equation=r"$Bq = ( u_2 - u_0 ) / ( 1000 * qt - \sigma_v^{total} )$",
         value_range=(0, None),
     )
 
@@ -382,7 +382,7 @@ class GeoParameters:
         label="normalized friction ratio",
         unit="%",
         symbol="Fr",
-        equation="$Fr = fs / ( 1000 * qt - \sigma_v^{total} ) * 100\%$",
+        equation=r"$Fr = fs / ( 1000 * qt - \sigma_v^{total} ) * 100\%$",
         value_range=(0, None),
     )
 
@@ -391,7 +391,7 @@ class GeoParameters:
         label="soil behavior index",
         unit="-",
         symbol="Ic",
-        equation="$Ic = \sqrt{( 3.47 - \log Qt)^2 + (\log Fr + 1.22)^2 }$",
+        equation=r"$Ic = \sqrt{( 3.47 - \log Qt)^2 + (\log Fr + 1.22)^2 }$",
     )
 
     n = GeoParameter(
@@ -399,7 +399,7 @@ class GeoParameters:
         label="exponent for normalized soil behavior index",
         unit="-",
         symbol="n",
-        equation="$n = \min \left( 0.381 * Ic + 0.05 * (\sigma_v^{eff} / p_{Atm}) - 0.15 ), 1.0\right)$",
+        equation=r"$n = \min \left( 0.381 * Ic + 0.05 * (\sigma_v^{eff} / p_{Atm}) - 0.15 ), 1.0\right)$",
     )
 
     Qtn = GeoParameter(
@@ -407,7 +407,7 @@ class GeoParameters:
         label="normalized cone resistance by n exponent",
         unit="-",
         symbol="Qtn",
-        equation="$Qtn = Qt * \left( \frac{p_{Atm}}{\sigma_v^{eff}}\right)^{n - 1}$",
+        equation=r"$Qtn = Qt * \left( \frac{p_{Atm}}{\sigma_v^{eff}}\right)^{n - 1}$",
     )
 
     Icn = GeoParameter(
@@ -416,7 +416,7 @@ class GeoParameters:
         axis_title="SBT",
         unit="-",
         symbol="Icn",
-        equation="$Icn =  \sqrt{\left( 3.47 - \\frac{\log Qtn}{\log 10} \\right)^2 + \left(\\frac{\log Fr}{\log 10} + 1.22 \\right)^2 }$",
+        equation=r"$Icn =  \sqrt{\left( 3.47 - \\frac{\log Qtn}{\log 10} \\right)^2 + \left(\\frac{\log Fr}{\log 10} + 1.22 \\right)^2 }$",
         legend_="Icn (Robertson, 2009)",
         value_range=(0, 4.5),
     )

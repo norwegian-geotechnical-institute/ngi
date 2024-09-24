@@ -1,16 +1,36 @@
-from typing import List
+from typing import Literal
 
 import numpy as np
 import pandas as pd
 from scipy.interpolate import interp1d
 
 
-def interpolate_missing_values(df: pd.DataFrame, key_col: str, inplace: bool = False, col_list: List[str] = False):
+def set_replace_columns(df: pd.DataFrame, col_list: list[str]) -> list[str]:
+    # Get the columns where interpolation should be performed (any column with NaN)
+    return col_list if col_list else df.columns[df.isna().any()].tolist()
+
+
+def interpolate_missing_values__padding_method(df: pd.DataFrame, inplace: bool = False, col_list: list[str] = []):
     # Whether to mutate the provided DataFrame or not
     _df = df if inplace else df.copy()
 
-    # Get the columns where interpolation should be performed (any column with NaN)
-    _cols: List[str] = col_list if col_list else _df.columns[df.isna().any()].tolist()
+    # Get the columns where interpolation should be performed
+    _cols = set_replace_columns(_df, col_list)
+
+    for col in _cols:
+        _df[col] = _df[col].interpolate(method="pad")
+
+    return _df
+
+
+def interpolate_missing_values__linear_method(
+    df: pd.DataFrame, key_col: str, inplace: bool = False, col_list: list[str] = []
+):
+    # Whether to mutate the provided DataFrame or not
+    _df = df if inplace else df.copy()
+
+    # Get the columns where interpolation should be performed
+    _cols = set_replace_columns(_df, col_list)
 
     # Store the key col values as a numpy array
     key_values = np.array(_df[key_col].values.tolist())
@@ -30,3 +50,17 @@ def interpolate_missing_values(df: pd.DataFrame, key_col: str, inplace: bool = F
             _df[col] = f(key_values)
 
     return _df
+
+
+def interpolate_missing_values(
+    df: pd.DataFrame,
+    key_col: str = "depth",
+    inplace: bool = False,
+    col_list: list[str] = [],
+    mode: Literal["linear", "padding"] = "linear",
+):
+    return (
+        interpolate_missing_values__linear_method(df, key_col, inplace, col_list)
+        if mode == "linear"
+        else interpolate_missing_values__padding_method(df, inplace, col_list)
+    )
