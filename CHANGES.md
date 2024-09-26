@@ -1,5 +1,11 @@
 # Changes
 
+## Version 0.1.7:
+
+**date: 2024-09-26**
+
+- fix wrong interpolation mode set for u0.
+
 ## Version 0.1.6:
 
 **date: 2024-09-26**
