@@ -18,7 +18,7 @@ def interpolate_missing_values__padding_method(df: pd.DataFrame, inplace: bool =
     _cols = set_replace_columns(_df, col_list)
 
     for col in _cols:
-        _df[col] = _df[col].interpolate(method="pad")
+        _df[col] = _df[col].ffill()
 
     return _df
 

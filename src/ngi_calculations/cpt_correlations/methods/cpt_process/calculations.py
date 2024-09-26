@@ -170,7 +170,12 @@ class CPTProcessCalculation:
         _df.set_index(depth, drop=False, inplace=True)
 
         # Interpolate the missing values.
-        _df = interpolate_missing_values(_df, key_col=depth, col_list=lab_cols, mode=self.options.interpolation_mode)
+        _df = interpolate_missing_values(
+            _df, key_col=depth, col_list=[c for c in lab_cols if c != "u0"], mode=self.options.interpolation_mode
+        )
+
+        # Handle u0 differently as it should always be interpolated linearly
+        _df = interpolate_missing_values(_df, key_col=depth, col_list=["u0"], mode=self.options.interpolation_mode)
 
         # # Prevent values for certain lab profiles to go below zero
         # _df[GEO.u0.key] = _df[GEO.u0.key].clip(lower=0.0)
