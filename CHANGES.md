@@ -1,5 +1,12 @@
 # Changes
 
+## Version 0.1.6:
+
+**date: 2024-09-26**
+
+- missing data interpolation: ensure that u0 is always linearly interpolated
+- fix interpolation warning from pandas future deprecation
+
 ## Version 0.1.5:
 
 **date: 2024-09-24**
